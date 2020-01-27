@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+    function getRandomInteger (min, max) {
+    let rand = Math.random();
+    let rand_integer = rand * (max - min) + min;
+    rand_integer = Math.round(rand_integer);
+    return rand_integer;
+    }
+    let oyun = ['qaya', 'kagiz', 'qayci'];
+    let tesadufiReqem = getRandomInteger(0, 2);
+    let oyunTesadufi = oyun[tesadufiReqem];
+
+
+    var secim = prompt('Secimini ele: ');
+
+    function getChoice(secim){
+        if(oyunTesadufi === 'kagiz'){
+            if(secim === 'kagiz'){
+            return 'Kompyuter: ' + oyunTesadufi+'\n' + 'Istifadeci: '+ secim + '\n'+  'Netice: Oyun berabere qaldi';
+            }else if(secim === 'qaya'){
+            return 'Kompyuter: ' + oyunTesadufi+'\n' + 'Istifadeci: '+ secim + '\n'+  'Netice: Kompyuter qalib geldi';
+            }else if(secim === 'qayci'){
+                return 'Kompyuter: ' + oyunTesadufi+'\n' + 'Istifadeci: '+ secim + '\n'+  'Netice: Siz qalib geldiniz';
+            }
+        }else if(oyunTesadufi === 'qaya'){
+            if(secim === 'kagiz'){
+            return 'Kompyuter: ' + oyunTesadufi+'\n' + 'Istifadeci: '+ secim + '\n'+  'Netice: Siz qalib geldiniz';
+            }else if(secim === 'qaya'){
+            return 'Kompyuter: ' + oyunTesadufi+'\n' + 'Istifadeci: '+ secim + '\n'+  'Netice: Oyun berabere qaldi';
+            }else if(secim === 'qayci'){
+                return 'Kompyuter: ' + oyunTesadufi+'\n' + 'Istifadeci: '+ secim + '\n'+  'Netice: Kompyuter qalib geldi';
+            }
+        }else if(oyunTesadufi === 'qayci'){
+            if(secim === 'kagiz'){
+            return 'Kompyuter: ' + oyunTesadufi+'\n' + 'Istifadeci: '+ secim + '\n'+  'Netice: Kompyuter qalib geldi';
+            }else if(secim === 'qaya'){
+            return 'Kompyuter: ' + oyunTesadufi+'\n' + 'Istifadeci: '+ secim + '\n'+  'Netice: Siz qalib geldiniz';
+            }else if(secim === 'qayci'){
+                return 'Kompyuter: ' + oyunTesadufi+'\n' + 'Istifadeci: '+ secim + '\n'+  'Netice: Oyun berabere qaldi';
+            }
+        }
+    
+    }
+    console.log(getChoice(secim));
+
+
+    </script>
+</body>
+</html>
